@@ -1,0 +1,611 @@
+{
+  "trip": {
+    "destination": "Seoul, South Korea",
+    "startDate": "2026-10-03",
+    "endDate": "2026-10-10",
+    "days": 8,
+    "budget": 4500,
+    "travelers": 2
+  },
+  "preferences": {
+    "style": "relaxed-cultural",
+    "pace": "moderate",
+    "mustSees": ["Gyeongbokgung Palace", "Bukchon Hanok Village", "Changdeokgung + Secret Garden", "Namsan Tower", "Gwangjang Market", "Myeongdong", "Nami Island (Fall Foliage)", "Han River"],
+    "dietary": "no restrictions",
+    "accommodation": "mid-range",
+    "interests": ["history", "food", "art", "culture", "shopping", "nature"]
+  },
+  "flights": [
+    {
+      "id": "flight_1",
+      "airline": "Korean Air / Asiana",
+      "from": "SFO",
+      "to": "ICN",
+      "date": "2026-10-03",
+      "departTime": "11:00 AM",
+      "arriveTime": "2:30 PM +1d",
+      "duration": "11h 30m",
+      "stops": 0,
+      "price": 850,
+      "type": "outbound"
+    },
+    {
+      "id": "flight_2",
+      "airline": "Korean Air / Asiana",
+      "from": "ICN",
+      "to": "SFO",
+      "date": "2026-10-10",
+      "departTime": "1:00 PM",
+      "arriveTime": "8:00 AM",
+      "duration": "12h",
+      "stops": 0,
+      "price": 850,
+      "type": "return"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "hotel_seoul_myeongdong",
+      "name": "Myeongdong Boutique Hotel",
+      "city": "Seoul - Myeongdong",
+      "checkIn": "2026-10-04",
+      "checkOut": "2026-10-08",
+      "nights": 4,
+      "pricePerNight": 95,
+      "totalPrice": 380,
+      "rating": 4.5,
+      "amenities": ["WiFi", "AC", "Korean breakfast", "24-hr front desk"],
+      "location": "Heart of shopping district",
+      "url": "https://booking.example.com"
+    },
+    {
+      "id": "hotel_seoul_itaewon",
+      "name": "Itaewon Riverside Hotel",
+      "city": "Seoul - Itaewon",
+      "checkIn": "2026-10-08",
+      "checkOut": "2026-10-10",
+      "nights": 2,
+      "pricePerNight": 110,
+      "totalPrice": 220,
+      "rating": 4.6,
+      "amenities": ["WiFi", "Han River view", "Restaurant", "Spa"],
+      "location": "Near Han River",
+      "url": "https://booking.example.com"
+    }
+  ],
+  "attractions": [
+    {
+      "id": "att_gyeongbokgung",
+      "name": "Gyeongbokgung Palace",
+      "city": "Seoul",
+      "type": "landmark",
+      "description": "Royal palace with beautiful grounds. Rent a hanbok (traditional dress) for free entry and amazing photos!",
+      "admissionPrice": 0,
+      "hoursOpen": "9 AM - 6 PM",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.8,
+      "mustSee": true,
+      "url": "https://example.com/gyeongbokgung"
+    },
+    {
+      "id": "att_bukchon",
+      "name": "Bukchon Hanok Village",
+      "city": "Seoul",
+      "type": "neighborhood",
+      "description": "Traditional Korean houses preserved as a historic village. Go early before crowds. Be quiet - people live here!",
+      "admissionPrice": 0,
+      "hoursOpen": "Open all day",
+      "timeToVisit": "1.5-2 hours",
+      "rating": 4.7,
+      "mustSee": true,
+      "url": "https://example.com/bukchon"
+    },
+    {
+      "id": "att_changdeokgung",
+      "name": "Changdeokgung Palace + Secret Garden",
+      "city": "Seoul",
+      "type": "landmark",
+      "description": "UNESCO site with beautiful Secret Garden. Book Secret Garden tour in advance online.",
+      "admissionPrice": 18,
+      "hoursOpen": "9 AM - 6 PM (closed Mondays)",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.8,
+      "mustSee": true,
+      "url": "https://example.com/changdeokgung"
+    },
+    {
+      "id": "att_namsan",
+      "name": "Namsan Tower (N Seoul Tower)",
+      "city": "Seoul",
+      "type": "landmark",
+      "description": "Take cable car up for sunset views, love locks, and 360° city views.",
+      "admissionPrice": 12,
+      "hoursOpen": "10 AM - 11 PM",
+      "timeToVisit": "1.5-2 hours",
+      "rating": 4.6,
+      "mustSee": true,
+      "url": "https://example.com/namsan"
+    },
+    {
+      "id": "att_gwangjang",
+      "name": "Gwangjang Market",
+      "city": "Seoul",
+      "type": "market",
+      "description": "One of Seoul's oldest & best food markets. Must-eat: bindaetteok, mayak gimbap, yukhoe.",
+      "admissionPrice": 0,
+      "hoursOpen": "9 AM - 6 PM",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.7,
+      "mustSee": true,
+      "url": "https://example.com/gwangjang"
+    },
+    {
+      "id": "att_nami_island",
+      "name": "Nami Island + Garden of Morning Calm",
+      "city": "Gapyeong (day trip)",
+      "type": "nature",
+      "description": "Classic combo for fall foliage season. Peak foliage early Oct! Take ITX train or book shuttle tour.",
+      "admissionPrice": 25,
+      "hoursOpen": "9 AM - 9 PM",
+      "timeToVisit": "Full day (6-8 hours with travel)",
+      "rating": 4.8,
+      "mustSee": true,
+      "url": "https://example.com/nami"
+    },
+    {
+      "id": "att_leeum",
+      "name": "Leeum Museum of Art",
+      "city": "Seoul",
+      "type": "museum",
+      "description": "Samsung's world-class art collection. Stunning modern architecture.",
+      "admissionPrice": 15,
+      "hoursOpen": "10 AM - 6 PM (closed Mondays)",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.7,
+      "mustSee": false,
+      "url": "https://example.com/leeum"
+    },
+    {
+      "id": "att_national_museum",
+      "name": "National Museum of Korea",
+      "city": "Seoul",
+      "type": "museum",
+      "description": "Massive museum in Yongsan, FREE admission. Allow 2-3 hours.",
+      "admissionPrice": 0,
+      "hoursOpen": "9 AM - 6 PM (closed Mondays)",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.6,
+      "mustSee": false,
+      "url": "https://example.com/national-museum"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "rest_mongtan",
+      "name": "Mongtan",
+      "city": "Seoul - Yongsan",
+      "cuisine": "Korean BBQ",
+      "priceRange": "$$",
+      "rating": 4.9,
+      "description": "Straw-smoked short ribs, legendary fried rice. No reservations - show up at 11am for waitlist.",
+      "url": "https://example.com/mongtan"
+    },
+    {
+      "id": "rest_naris",
+      "name": "Nari's House",
+      "city": "Seoul - Yongsan",
+      "cuisine": "Korean BBQ",
+      "priceRange": "$$",
+      "rating": 4.8,
+      "description": "Old-school nopo, thin-sliced pork belly with incredible scallion salad. Cash only.",
+      "url": "https://example.com/naris"
+    },
+    {
+      "id": "rest_imun",
+      "name": "Imun Seolnongtang",
+      "city": "Seoul - Jongno",
+      "cuisine": "Korean Soup",
+      "priceRange": "$$",
+      "rating": 4.9,
+      "description": "Seoul's oldest restaurant (since 1904). Ox bone soup simmered 17 hours. Simple, pure, unforgettable.",
+      "url": "https://example.com/imun"
+    },
+    {
+      "id": "rest_woo",
+      "name": "Woo Lae Oak",
+      "city": "Seoul",
+      "cuisine": "Pyongyang Naengmyeon",
+      "priceRange": "$$",
+      "rating": 4.7,
+      "description": "Legendary since 1946. Pyongyang-style naengmyeon + charcoal bulgogi. Sip broth first!",
+      "url": "https://example.com/woo"
+    },
+    {
+      "id": "rest_myeongdong_kyoja",
+      "name": "Myeongdong Kyoja",
+      "city": "Seoul - Myeongdong",
+      "cuisine": "Kalguksu (Noodles)",
+      "priceRange": "$",
+      "rating": 4.6,
+      "description": "Famous knife-cut noodles & mandu. Right in your neighborhood!",
+      "url": "https://example.com/kyoja"
+    },
+    {
+      "id": "rest_tosokchon",
+      "name": "Tosokchon",
+      "city": "Seoul",
+      "cuisine": "Korean Soup",
+      "priceRange": "$$",
+      "rating": 4.7,
+      "description": "Samgyetang (ginseng chicken soup) near Gyeongbokgung. Go early to avoid lines.",
+      "url": "https://example.com/tosokchon"
+    },
+    {
+      "id": "rest_seungune",
+      "name": "Seungune",
+      "city": "Seoul - near Gwangjang",
+      "cuisine": "Baekban (Set Meal)",
+      "priceRange": "$",
+      "rating": 4.8,
+      "description": "Cash-only baekban set meal under ₩10,000. Best breakfast in Seoul! Floor seating, shoes off.",
+      "url": "https://example.com/seungune"
+    },
+    {
+      "id": "rest_eongteori",
+      "name": "Eongteori Tongdak",
+      "city": "Seoul",
+      "cuisine": "Fried Chicken",
+      "priceRange": "$",
+      "rating": 4.6,
+      "description": "Old-school Korean fried chicken. Skin cracks like a chip. Perfect with beer & soju.",
+      "url": "https://example.com/eongteori"
+    },
+    {
+      "id": "rest_john_mark",
+      "name": "John & Mark",
+      "city": "Seoul - Dongmyo",
+      "cuisine": "Korean Drinking Food",
+      "priceRange": "$",
+      "rating": 4.5,
+      "description": "Mozzarella potato chip jeon + house makgeolli in aluminum kettles. Unique!",
+      "url": "https://example.com/john-mark"
+    },
+    {
+      "id": "rest_yeonseo",
+      "name": "Yeonseo Market",
+      "city": "Seoul - Yongsan",
+      "cuisine": "Seafood",
+      "priceRange": "$$",
+      "rating": 4.7,
+      "description": "Indoor pojangmacha, aunties grill live seafood to order. Authentic Seoul experience.",
+      "url": "https://example.com/yeonseo"
+    },
+    {
+      "id": "rest_seoul_gypsy",
+      "name": "Seoul Gypsy Fermentaria",
+      "city": "Seoul - Seochon",
+      "cuisine": "Pizza + Craft Beer",
+      "priceRange": "$$",
+      "rating": 4.6,
+      "description": "Fermented mushroom cream pizza + Mission Helles. Sit at bar for 6 different pours.",
+      "url": "https://example.com/gypsy"
+    },
+    {
+      "id": "rest_haap",
+      "name": "Haap",
+      "city": "Seoul - Wonseo",
+      "cuisine": "Korean Dessert & Tea",
+      "priceRange": "$",
+      "rating": 4.7,
+      "description": "Traditional Korean desserts & tea set (₩15,000). Baesuk (simmered pear drink) is a must!",
+      "url": "https://example.com/haap"
+    },
+    {
+      "id": "rest_cafe_onion",
+      "name": "Café Onion",
+      "city": "Seoul - Anguk/Seongsu",
+      "cuisine": "Café",
+      "priceRange": "$",
+      "rating": 4.5,
+      "description": "Gorgeous converted warehouse cafes. Beautiful ambiance.",
+      "url": "https://example.com/cafe-onion"
+    },
+    {
+      "id": "rest_bar_cham",
+      "name": "Bar Cham",
+      "city": "Seoul",
+      "cuisine": "Cocktails",
+      "priceRange": "$$",
+      "rating": 4.6,
+      "description": "Province-inspired Korean cocktails. Bartenders explain everything in English.",
+      "url": "https://example.com/bar-cham"
+    }
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "date": "2026-10-03",
+      "title": "Travel Day - Depart for Seoul",
+      "activities": [
+        {
+          "time": "11:00 AM",
+          "activity": "Depart SFO on Korean Air",
+          "type": "travel",
+          "details": "Nonstop flight 11.5 hours"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-10-04",
+      "title": "Arrive Seoul - Myeongdong Exploration",
+      "activities": [
+        {
+          "time": "2:30 PM",
+          "activity": "Arrive Incheon Airport, transfer to hotel",
+          "type": "travel",
+          "details": "Check in & rest"
+        },
+        {
+          "time": "5:00 PM",
+          "activity": "Myeongdong shopping + Olive Young",
+          "type": "attraction",
+          "details": "K-beauty paradise"
+        },
+        {
+          "time": "8:00 PM",
+          "activity": "Dinner at Myeongdong street food",
+          "type": "meal",
+          "details": "Corn dogs, tteokbokki, egg bread, tornado potato"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-10-05",
+      "title": "Palaces & Traditional Villages",
+      "activities": [
+        {
+          "time": "8:00 AM",
+          "activity": "Seungune breakfast",
+          "type": "meal",
+          "details": "Best breakfast in Seoul"
+        },
+        {
+          "time": "9:30 AM",
+          "activity": "Gyeongbokgung Palace (rent hanbok!)",
+          "type": "attraction",
+          "details": "Free entry with hanbok rental - amazing photos"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch nearby",
+          "type": "meal"
+        },
+        {
+          "time": "2:30 PM",
+          "activity": "Bukchon Hanok Village",
+          "type": "attraction",
+          "details": "Go early, be quiet"
+        },
+        {
+          "time": "5:00 PM",
+          "activity": "Insadong cafes + shopping",
+          "type": "attraction"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Dinner at Gwangjang Market",
+          "type": "restaurant",
+          "details": "Bindaetteok, mayak gimbap, yukhoe"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-10-06",
+      "title": "UNESCO Sites & River Views",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "Breakfast at hotel",
+          "type": "meal"
+        },
+        {
+          "time": "9:30 AM",
+          "activity": "Changdeokgung + Secret Garden",
+          "type": "attraction",
+          "details": "UNESCO site - book garden tour online"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch",
+          "type": "meal"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Cheonggyecheon Stream walk",
+          "type": "attraction",
+          "details": "Beautiful lit-up stream through city"
+        },
+        {
+          "time": "6:00 PM",
+          "activity": "Namsan Tower at sunset",
+          "type": "attraction",
+          "details": "Cable car up, love locks, city views"
+        },
+        {
+          "time": "8:00 PM",
+          "activity": "Dinner at Imun Seolnongtang",
+          "type": "restaurant",
+          "details": "Since 1904, ox bone soup"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-10-07",
+      "title": "Fall Foliage Day 🍂 - Nami Island",
+      "activities": [
+        {
+          "time": "7:00 AM",
+          "activity": "Early breakfast & depart hotel",
+          "type": "meal",
+          "details": "Meet shuttle tour or catch ITX train"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Nami Island exploration",
+          "type": "attraction",
+          "details": "Peak foliage season! Beautiful walks"
+        },
+        {
+          "time": "2:00 PM",
+          "activity": "Garden of Morning Calm",
+          "type": "attraction",
+          "details": "Stunning gardens + cafes"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Return to Seoul late or overnight nearby",
+          "type": "travel"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-10-08",
+      "title": "Transfer to Itaewon - Museums & Culture",
+      "activities": [
+        {
+          "time": "10:00 AM",
+          "activity": "Check out of Myeongdong hotel",
+          "type": "travel"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Leeum Museum of Art",
+          "type": "attraction",
+          "details": "Samsung collection"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Check in to Itaewon hotel",
+          "type": "travel"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Gyeongnidan-gil cafe hopping",
+          "type": "attraction",
+          "details": "Trendy street"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Dinner at Mongtan KBBQ",
+          "type": "restaurant",
+          "details": "Arrive by 5pm for waitlist"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-10-09",
+      "title": "Final Day - Museums, River & Nightlife",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "National Museum of Korea",
+          "type": "attraction",
+          "details": "FREE admission, massive"
+        },
+        {
+          "time": "12:00 PM",
+          "activity": "Lunch",
+          "type": "meal"
+        },
+        {
+          "time": "1:30 PM",
+          "activity": "Antique Alley shopping",
+          "type": "attraction",
+          "details": "Vintage finds"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Haap dessert & tea set",
+          "type": "restaurant",
+          "details": "Traditional Korean desserts"
+        },
+        {
+          "time": "6:00 PM",
+          "activity": "Han River night walk",
+          "type": "attraction",
+          "details": "Grab chimaek (chicken + beer)"
+        },
+        {
+          "time": "8:00 PM",
+          "activity": "Bar Cham cocktails",
+          "type": "restaurant",
+          "details": "Province-inspired Korean cocktails"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-10-10",
+      "title": "Departure",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "Breakfast & check out",
+          "type": "meal"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Head to Incheon Airport",
+          "type": "travel"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Depart Seoul on Korean Air",
+          "type": "travel",
+          "details": "Arrive SFO same day at 8:00 AM"
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "flights": {
+      "description": "Round-trip flights (2 people)",
+      "amount": 1700
+    },
+    "accommodation": {
+      "description": "Hotels (6 nights - Myeongdong 4 + Itaewon 2)",
+      "amount": 600
+    },
+    "activities": {
+      "description": "Museum entries, attractions, day trip",
+      "amount": 300
+    },
+    "meals": {
+      "description": "Food (mix of street food, market, nice dinners)",
+      "amount": 800
+    },
+    "transport": {
+      "description": "Airport transfers, local metro, cable car, tours",
+      "amount": 400
+    },
+    "misc": {
+      "description": "Shopping, hanbok rental, tips, contingency",
+      "amount": 300
+    },
+    "total": 4100
+  },
+  "tips": {
+    "transportation": "Get a T-money card (rechargeable transit card) at convenience stores. Use subway for everything - cheap and efficient. Airport bus to Myeongdong: ~₩10,000.",
+    "language": "English widely spoken in tourist areas. Learn basic: Annyeonghaseyo (hello), Gamsahamnida (thank you), Eodi isseoyo (where is it), Sillyehamnida (excuse me).",
+    "bestTime": "October is PERFECT - fall foliage, mild weather (60-70°F), fewer crowds than summer, great food season with ginseng chicken soup.",
+    "crowds": "Popular spots busy 11 AM - 4 PM. Go early morning (9 AM) or evening. Avoid lunch hours at famous restaurants.",
+    "currency": "Korean Won (₩). ATMs everywhere. Most places accept cards, but small old places want cash. 1 USD ≈ 1,200 KRW.",
+    "safety": "Seoul is very safe. Petty theft rare but watch bags in crowded markets. Public transit is the safest, fastest way to explore."
+  }
+}

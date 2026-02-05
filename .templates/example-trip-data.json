@@ -1,0 +1,479 @@
+{
+  "trip": {
+    "destination": "Italy",
+    "startDate": "2026-05-25",
+    "endDate": "2026-06-02",
+    "days": 9,
+    "budget": 5000,
+    "travelers": 2
+  },
+  "preferences": {
+    "style": "relaxed",
+    "pace": "moderate",
+    "mustSees": ["Venice", "Rome", "Florence", "Tuscany"],
+    "dietary": "no restrictions",
+    "accommodation": "mid-range",
+    "interests": ["history", "food", "art", "wine"]
+  },
+  "flights": [
+    {
+      "id": "flight_1",
+      "airline": "United Airlines",
+      "from": "SFO",
+      "to": "FCO",
+      "date": "2026-05-25",
+      "departTime": "10:30 AM",
+      "arriveTime": "11:30 AM +1d",
+      "duration": "10h 30m",
+      "stops": 0,
+      "price": 850,
+      "type": "outbound"
+    },
+    {
+      "id": "flight_2",
+      "airline": "Alitalia",
+      "from": "FCO",
+      "to": "SFO",
+      "date": "2026-06-02",
+      "departTime": "1:00 PM",
+      "arriveTime": "2:45 PM",
+      "duration": "11h 30m",
+      "stops": 1,
+      "price": 720,
+      "type": "return"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "hotel_rome_1",
+      "name": "Hotel Roma Dolce Vita",
+      "city": "Rome",
+      "checkIn": "2026-05-26",
+      "checkOut": "2026-05-28",
+      "nights": 2,
+      "pricePerNight": 120,
+      "totalPrice": 240,
+      "rating": 4.5,
+      "amenities": ["WiFi", "Breakfast", "Air Conditioning", "24-hour Front Desk"],
+      "location": "Near Colosseum",
+      "url": "https://booking.example.com/hotel-roma"
+    },
+    {
+      "id": "hotel_venice_1",
+      "name": "Venetian Charm Hotel",
+      "city": "Venice",
+      "checkIn": "2026-05-28",
+      "checkOut": "2026-05-30",
+      "nights": 2,
+      "pricePerNight": 150,
+      "totalPrice": 300,
+      "rating": 4.7,
+      "amenities": ["WiFi", "Canal View", "Restaurant", "Spa Services"],
+      "location": "Near San Marco",
+      "url": "https://booking.example.com/hotel-venice"
+    },
+    {
+      "id": "hotel_florence_1",
+      "name": "Florence Renaissance",
+      "city": "Florence",
+      "checkIn": "2026-05-30",
+      "checkOut": "2026-06-02",
+      "nights": 3,
+      "pricePerNight": 140,
+      "totalPrice": 420,
+      "rating": 4.8,
+      "amenities": ["WiFi", "Breakfast", "Rooftop Terrace", "Art Gallery"],
+      "location": "Near Duomo",
+      "url": "https://booking.example.com/hotel-florence"
+    }
+  ],
+  "attractions": [
+    {
+      "id": "att_colosseum",
+      "name": "Colosseum",
+      "city": "Rome",
+      "type": "landmark",
+      "description": "Ancient Roman amphitheater and iconic symbol of Rome",
+      "admissionPrice": 18,
+      "hoursOpen": "9 AM - 7 PM",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.8,
+      "mustSee": true,
+      "url": "https://example.com/colosseum"
+    },
+    {
+      "id": "att_vatican",
+      "name": "Vatican Museums",
+      "city": "Rome",
+      "type": "museum",
+      "description": "World's greatest art collection with Sistine Chapel",
+      "admissionPrice": 35,
+      "hoursOpen": "9 AM - 6 PM (closed Sundays)",
+      "timeToVisit": "3-4 hours",
+      "rating": 4.7,
+      "mustSee": true,
+      "url": "https://example.com/vatican"
+    },
+    {
+      "id": "att_stmark",
+      "name": "St. Mark's Basilica",
+      "city": "Venice",
+      "type": "landmark",
+      "description": "Beautiful Byzantine basilica in Venice's main square",
+      "admissionPrice": 0,
+      "hoursOpen": "9:30 AM - 5 PM",
+      "timeToVisit": "1.5 hours",
+      "rating": 4.6,
+      "mustSee": true,
+      "url": "https://example.com/st-marks"
+    },
+    {
+      "id": "att_uffizi",
+      "name": "Uffizi Gallery",
+      "city": "Florence",
+      "type": "museum",
+      "description": "Masterpieces by Botticelli, Leonardo, Michelangelo",
+      "admissionPrice": 25,
+      "hoursOpen": "8:15 AM - 6:50 PM (closed Mondays)",
+      "timeToVisit": "2-3 hours",
+      "rating": 4.7,
+      "mustSee": true,
+      "url": "https://example.com/uffizi"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "rest_rome_1",
+      "name": "Trattoria Trastevere",
+      "city": "Rome",
+      "cuisine": "Italian Traditional",
+      "priceRange": "$$",
+      "rating": 4.6,
+      "description": "Family-style Roman cuisine in historic neighborhood",
+      "url": "https://example.com/trattoria"
+    },
+    {
+      "id": "rest_rome_2",
+      "name": "La Pergola",
+      "city": "Rome",
+      "cuisine": "Fine Dining Italian",
+      "priceRange": "$$$",
+      "rating": 4.9,
+      "description": "Three Michelin stars, rooftop dining with city views",
+      "url": "https://example.com/lapergola"
+    },
+    {
+      "id": "rest_venice_1",
+      "name": "Osteria Al Portego",
+      "city": "Venice",
+      "cuisine": "Seafood",
+      "priceRange": "$$",
+      "rating": 4.5,
+      "description": "Fresh seafood and cicchetti in authentic Venetian setting",
+      "url": "https://example.com/alportego"
+    },
+    {
+      "id": "rest_florence_1",
+      "name": "Bacchanal",
+      "city": "Florence",
+      "cuisine": "Tuscan",
+      "priceRange": "$$",
+      "rating": 4.7,
+      "description": "Pasta and bistecca fiorentina in rustic ambiance",
+      "url": "https://example.com/bacchanal"
+    }
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "date": "2026-05-25",
+      "title": "Travel Day - Departure",
+      "activities": [
+        {
+          "time": "10:30 AM",
+          "activity": "Depart San Francisco (SFO) on United UA123",
+          "type": "travel",
+          "details": "Duration: 10h 30m, nonstop to Rome"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-05-26",
+      "title": "Rome - Ancient Wonders",
+      "activities": [
+        {
+          "time": "11:30 AM",
+          "activity": "Arrive Rome Fiumicino, transfer to hotel",
+          "type": "travel"
+        },
+        {
+          "time": "2:00 PM",
+          "activity": "Lunch at hotel or local café",
+          "type": "meal"
+        },
+        {
+          "time": "4:00 PM",
+          "activity": "Visit Colosseum",
+          "type": "attraction",
+          "details": "2-3 hours, admission €18"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Dinner at Trattoria Trastevere",
+          "type": "restaurant"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-05-27",
+      "title": "Rome - Vatican & Culture",
+      "activities": [
+        {
+          "time": "8:00 AM",
+          "activity": "Breakfast at hotel",
+          "type": "meal"
+        },
+        {
+          "time": "9:00 AM",
+          "activity": "Vatican Museums & Sistine Chapel",
+          "type": "attraction",
+          "details": "3-4 hours, admission €35"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch near Vatican",
+          "type": "meal"
+        },
+        {
+          "time": "4:00 PM",
+          "activity": "Rest at hotel / Shopping",
+          "type": "attraction"
+        },
+        {
+          "time": "8:00 PM",
+          "activity": "Dinner at La Pergola",
+          "type": "restaurant"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-05-28",
+      "title": "Travel to Venice",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "Train Rome to Venice",
+          "type": "travel",
+          "details": "3h 45m journey"
+        },
+        {
+          "time": "12:45 PM",
+          "activity": "Arrive Venice, check in to hotel",
+          "type": "travel"
+        },
+        {
+          "time": "2:00 PM",
+          "activity": "Lunch at Osteria Al Portego",
+          "type": "restaurant"
+        },
+        {
+          "time": "4:00 PM",
+          "activity": "St. Mark's Basilica & Square",
+          "type": "attraction"
+        },
+        {
+          "time": "6:00 PM",
+          "activity": "Evening gondola ride",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-05-29",
+      "title": "Venice Exploration",
+      "activities": [
+        {
+          "time": "8:00 AM",
+          "activity": "Breakfast & explore Rialto Bridge",
+          "type": "attraction"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Shopping at local markets",
+          "type": "attraction"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch - cicchetti tour",
+          "type": "meal"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Relax at café",
+          "type": "meal"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Sunset walk & dinner",
+          "type": "meal"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-05-30",
+      "title": "Travel to Florence",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "Train Venice to Florence",
+          "type": "travel",
+          "details": "2h 30m journey"
+        },
+        {
+          "time": "11:30 AM",
+          "activity": "Arrive Florence, check in",
+          "type": "travel"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch",
+          "type": "meal"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Uffizi Gallery",
+          "type": "attraction",
+          "details": "2-3 hours"
+        },
+        {
+          "time": "6:00 PM",
+          "activity": "Walk Ponte Vecchio at sunset",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-05-31",
+      "title": "Florence & Tuscany",
+      "activities": [
+        {
+          "time": "8:00 AM",
+          "activity": "Breakfast, Duomo & Baptistry",
+          "type": "attraction"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Climb Duomo dome",
+          "type": "attraction"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Lunch in Florence",
+          "type": "meal"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Day trip to Tuscany wine region",
+          "type": "attraction",
+          "details": "Wine tasting & countryside"
+        },
+        {
+          "time": "7:00 PM",
+          "activity": "Return to Florence, dinner at Bacchanal",
+          "type": "restaurant"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-06-01",
+      "title": "Final Day in Florence",
+      "activities": [
+        {
+          "time": "9:00 AM",
+          "activity": "Accademia Gallery (David statue)",
+          "type": "attraction"
+        },
+        {
+          "time": "12:00 PM",
+          "activity": "Final shopping & lunch",
+          "type": "meal"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Relax at rooftop terrace",
+          "type": "attraction"
+        },
+        {
+          "time": "6:00 PM",
+          "activity": "Prepare for departure",
+          "type": "travel"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-06-02",
+      "title": "Return Home",
+      "activities": [
+        {
+          "time": "6:00 AM",
+          "activity": "Depart hotel, travel to airport",
+          "type": "travel"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Depart Rome (FCO) on Alitalia AZ456",
+          "type": "travel",
+          "details": "Duration: 11h 30m (1 stop)"
+        },
+        {
+          "time": "2:45 PM",
+          "activity": "Arrive San Francisco (SFO)",
+          "type": "travel"
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "flights": {
+      "description": "Round-trip flights (2 people)",
+      "amount": 1570
+    },
+    "accommodation": {
+      "description": "Hotel stays (7 nights, avg ~$136/night)",
+      "amount": 960
+    },
+    "activities": {
+      "description": "Museum entries, tours, attractions",
+      "amount": 450
+    },
+    "meals": {
+      "description": "Food (mix of budget/mid-range/nice dinners)",
+      "amount": 900
+    },
+    "transport": {
+      "description": "Trains, taxis, local transit",
+      "amount": 500
+    },
+    "misc": {
+      "description": "Shopping, tips, emergencies",
+      "amount": 320
+    },
+    "total": 4700
+  },
+  "tips": {
+    "transportation": "Buy a Trenitalia rail pass for unlimited train travel across Italy. Much cheaper than individual tickets. Venice uses vaporetto (water buses) - get a 3-day pass.",
+    "language": "English is widely spoken in tourist areas, especially Rome, Venice, and Florence. Learn basic phrases: Grazie (thanks), Prego (welcome), Scusi (excuse me), Dov'è (Where is).",
+    "bestTime": "May is perfect - warm weather (70-80°F), manageable crowds before summer tourists, spring flowers blooming. Avoid July-August (hot, crowded, expensive).",
+    "crowds": "Colosseum and Vatican busiest 11 AM - 4 PM. Book tickets online in advance. Visit early morning (9 AM) or late afternoon (4 PM) for shorter lines.",
+    "currency": "Euro (€). ATMs widely available - withdraw cash rather than exchange. Credit cards accepted at most restaurants/shops. Smaller places (trattorias) may prefer cash.",
+    "safety": "Rome, Venice, Florence are safe for tourists. Petty theft common in crowded areas (trains, attractions) - watch backpacks. Use hotel safes for valuables."
+  }
+}

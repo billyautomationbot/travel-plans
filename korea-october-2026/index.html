@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoul, South Korea Trip - Fri, Oct 2, 2026 to Fri, Oct 9, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .meta {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        section h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        /* Itinerary Timeline */
+        .itinerary-day {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .day-date {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .activity {
+            display: flex;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            gap: 1rem;
+        }
+
+        .activity-time {
+            font-weight: bold;
+            color: var(--primary);
+            min-width: 80px;
+            font-size: 0.9rem;
+        }
+
+        .activity-content h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .activity-type {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .activity-type.travel {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+
+        .activity-type.attraction {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+
+        .activity-type.meal {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        .activity-type.restaurant {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th {
+            background: var(--light);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: var(--light);
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .rating {
+            color: var(--warning);
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .card .price {
+            color: var(--success);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .card .details {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin: 0.5rem 0;
+        }
+
+        /* Budget */
+        .budget-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .budget-list {
+            list-style: none;
+        }
+
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .budget-item strong {
+            color: var(--dark);
+        }
+
+        .budget-item .amount {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .budget-total {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .budget-chart {
+            display: flex;
+            height: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .budget-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Map */
+        .map-container {
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+            border: 1px solid var(--border);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Tips */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip {
+            padding: 1.5rem;
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+        }
+
+        .tip h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip p {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Print */
+        @media print {
+            nav, footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .budget-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: slideUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#itinerary" class="nav-link active">Itinerary</a>
+            <a href="#flights" class="nav-link">Flights</a>
+            <a href="#hotels" class="nav-link">Hotels</a>
+            <a href="#attractions" class="nav-link">Attractions</a>
+            <a href="#restaurants" class="nav-link">Restaurants</a>
+            <a href="#budget" class="nav-link">Budget</a>
+            <a href="#tips" class="nav-link">Tips</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🌍 Seoul, South Korea</h1>
+        <div class="meta">Fri, Oct 2, 2026 — Fri, Oct 9, 2026</div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">8</div>
+                <div class="stat-label">Days</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$4500</div>
+                <div class="stat-label">Budget</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Travelers</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Itinerary Section -->
+        <section id="itinerary">
+            <h2>📅 Day-by-Day Itinerary</h2>
+            <div class="itinerary-timeline">
+                
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 1: Travel Day - Depart for Seoul</div>
+                <span class="day-date">Fri, Oct 2, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">11:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Depart SFO on Korean Air</h4>
+                        <p>Nonstop flight 11.5 hours</p>
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 2: Arrive Seoul - Myeongdong Exploration</div>
+                <span class="day-date">Sat, Oct 3, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">2:30 PM</div>
+                    <div class="activity-content">
+                        <h4>Arrive Incheon Airport, transfer to hotel</h4>
+                        <p>Check in & rest</p>
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">5:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Myeongdong shopping + Olive Young</h4>
+                        <p>K-beauty paradise</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">8:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Dinner at Myeongdong street food</h4>
+                        <p>Corn dogs, tteokbokki, egg bread, tornado potato</p>
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 3: Palaces & Traditional Villages</div>
+                <span class="day-date">Sun, Oct 4, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">8:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Seungune breakfast</h4>
+                        <p>Best breakfast in Seoul</p>
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">9:30 AM</div>
+                    <div class="activity-content">
+                        <h4>Gyeongbokgung Palace (rent hanbok!)</h4>
+                        <p>Free entry with hanbok rental - amazing photos</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">1:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Lunch nearby</h4>
+                        
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">2:30 PM</div>
+                    <div class="activity-content">
+                        <h4>Bukchon Hanok Village</h4>
+                        <p>Go early, be quiet</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">5:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Insadong cafes + shopping</h4>
+                        
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">7:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Dinner at Gwangjang Market</h4>
+                        <p>Bindaetteok, mayak gimbap, yukhoe</p>
+                        <span class="activity-type restaurant">restaurant</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 4: UNESCO Sites & River Views</div>
+                <span class="day-date">Mon, Oct 5, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">9:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Breakfast at hotel</h4>
+                        
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">9:30 AM</div>
+                    <div class="activity-content">
+                        <h4>Changdeokgung + Secret Garden</h4>
+                        <p>UNESCO site - book garden tour online</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">1:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Lunch</h4>
+                        
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">3:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Cheonggyecheon Stream walk</h4>
+                        <p>Beautiful lit-up stream through city</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">6:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Namsan Tower at sunset</h4>
+                        <p>Cable car up, love locks, city views</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">8:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Dinner at Imun Seolnongtang</h4>
+                        <p>Since 1904, ox bone soup</p>
+                        <span class="activity-type restaurant">restaurant</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 5: Fall Foliage Day 🍂 - Nami Island</div>
+                <span class="day-date">Tue, Oct 6, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">7:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Early breakfast & depart hotel</h4>
+                        <p>Meet shuttle tour or catch ITX train</p>
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">11:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Nami Island exploration</h4>
+                        <p>Peak foliage season! Beautiful walks</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">2:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Garden of Morning Calm</h4>
+                        <p>Stunning gardens + cafes</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">7:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Return to Seoul late or overnight nearby</h4>
+                        
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 6: Transfer to Itaewon - Museums & Culture</div>
+                <span class="day-date">Wed, Oct 7, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">10:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Check out of Myeongdong hotel</h4>
+                        
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">11:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Leeum Museum of Art</h4>
+                        <p>Samsung collection</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">1:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Check in to Itaewon hotel</h4>
+                        
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">3:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Gyeongnidan-gil cafe hopping</h4>
+                        <p>Trendy street</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">7:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Dinner at Mongtan KBBQ</h4>
+                        <p>Arrive by 5pm for waitlist</p>
+                        <span class="activity-type restaurant">restaurant</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 7: Final Day - Museums, River & Nightlife</div>
+                <span class="day-date">Thu, Oct 8, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">9:00 AM</div>
+                    <div class="activity-content">
+                        <h4>National Museum of Korea</h4>
+                        <p>FREE admission, massive</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">12:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Lunch</h4>
+                        
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">1:30 PM</div>
+                    <div class="activity-content">
+                        <h4>Antique Alley shopping</h4>
+                        <p>Vintage finds</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">3:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Haap dessert & tea set</h4>
+                        <p>Traditional Korean desserts</p>
+                        <span class="activity-type restaurant">restaurant</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">6:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Han River night walk</h4>
+                        <p>Grab chimaek (chicken + beer)</p>
+                        <span class="activity-type attraction">attraction</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">8:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Bar Cham cocktails</h4>
+                        <p>Province-inspired Korean cocktails</p>
+                        <span class="activity-type restaurant">restaurant</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">Day 8: Departure</div>
+                <span class="day-date">Fri, Oct 9, 2026</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">9:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Breakfast & check out</h4>
+                        
+                        <span class="activity-type meal">meal</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">11:00 AM</div>
+                    <div class="activity-content">
+                        <h4>Head to Incheon Airport</h4>
+                        
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">1:00 PM</div>
+                    <div class="activity-content">
+                        <h4>Depart Seoul on Korean Air</h4>
+                        <p>Arrive SFO same day at 8:00 AM</p>
+                        <span class="activity-type travel">travel</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+            </div>
+        </section>
+
+        <!-- Flights Section -->
+        <section id="flights">
+            <h2>✈️ Flights</h2>
+            <h3>Outbound Flights</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><strong>Korean Air / Asiana</strong></td>
+            <td>SFO → ICN</td>
+            <td>11:00 AM → 2:30 PM +1d</td>
+            <td>11h 30m</td>
+            <td style="color: var(--success); font-weight: bold;">$850</td>
+        </tr>
+    
+                </tbody>
+            </table>
+            <h3>Return Flights</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><strong>Korean Air / Asiana</strong></td>
+            <td>ICN → SFO</td>
+            <td>1:00 PM → 8:00 AM</td>
+            <td>12h</td>
+            <td style="color: var(--success); font-weight: bold;">$850</td>
+        </tr>
+    
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Hotels Section -->
+        <section id="hotels">
+            <h2>🏨 Accommodation</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>Myeongdong Boutique Hotel</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 Seoul - Myeongdong</div><div class="price">$95/night</div><div class="details">✓ WiFi, AC, Korean breakfast, 24-hr front desk</div><div style="margin-top: 1rem;"><a href="https://booking.example.com" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Itaewon Riverside Hotel</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul - Itaewon</div><div class="price">$110/night</div><div class="details">✓ WiFi, Han River view, Restaurant, Spa</div><div style="margin-top: 1rem;"><a href="https://booking.example.com" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Attractions Section -->
+        <section id="attractions">
+            <h2>🎯 Must-See Attractions</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>Gyeongbokgung Palace</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 Seoul</div><p>Royal palace with beautiful grounds. Rent a hanbok (traditional dress) for free entry and amazing photos!</p><div class="details">landmark</div><div class="details">⏰ 9 AM - 6 PM</div><div style="margin-top: 1rem;"><a href="https://example.com/gyeongbokgung" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Bukchon Hanok Village</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul</div><p>Traditional Korean houses preserved as a historic village. Go early before crowds. Be quiet - people live here!</p><div class="details">neighborhood</div><div class="details">⏰ Open all day</div><div style="margin-top: 1rem;"><a href="https://example.com/bukchon" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Changdeokgung Palace + Secret Garden</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 Seoul</div><p>UNESCO site with beautiful Secret Garden. Book Secret Garden tour in advance online.</p><div class="details">landmark</div><div class="details">⏰ 9 AM - 6 PM (closed Mondays)</div><div style="margin-top: 1rem;"><a href="https://example.com/changdeokgung" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Namsan Tower (N Seoul Tower)</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul</div><p>Take cable car up for sunset views, love locks, and 360° city views.</p><div class="details">landmark</div><div class="details">⏰ 10 AM - 11 PM</div><div style="margin-top: 1rem;"><a href="https://example.com/namsan" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Gwangjang Market</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul</div><p>One of Seoul's oldest & best food markets. Must-eat: bindaetteok, mayak gimbap, yukhoe.</p><div class="details">market</div><div class="details">⏰ 9 AM - 6 PM</div><div style="margin-top: 1rem;"><a href="https://example.com/gwangjang" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Nami Island + Garden of Morning Calm</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 Gapyeong (day trip)</div><p>Classic combo for fall foliage season. Peak foliage early Oct! Take ITX train or book shuttle tour.</p><div class="details">nature</div><div class="details">⏰ 9 AM - 9 PM</div><div style="margin-top: 1rem;"><a href="https://example.com/nami" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Leeum Museum of Art</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul</div><p>Samsung's world-class art collection. Stunning modern architecture.</p><div class="details">museum</div><div class="details">⏰ 10 AM - 6 PM (closed Mondays)</div><div style="margin-top: 1rem;"><a href="https://example.com/leeum" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>National Museum of Korea</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul</div><p>Massive museum in Yongsan, FREE admission. Allow 2-3 hours.</p><div class="details">museum</div><div class="details">⏰ 9 AM - 6 PM (closed Mondays)</div><div style="margin-top: 1rem;"><a href="https://example.com/national-museum" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section id="restaurants">
+            <h2>🍽️ Dining Recommendations</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>Mongtan</h4>
+        <div class="rating">⭐ 4.9/5</div><div class="details">📍 Seoul - Yongsan</div><div class="price">$</div><p>Straw-smoked short ribs, legendary fried rice. No reservations - show up at 11am for waitlist.</p><div class="details">🍽️ Korean BBQ</div><div style="margin-top: 1rem;"><a href="https://example.com/mongtan" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Nari's House</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 Seoul - Yongsan</div><div class="price">$</div><p>Old-school nopo, thin-sliced pork belly with incredible scallion salad. Cash only.</p><div class="details">🍽️ Korean BBQ</div><div style="margin-top: 1rem;"><a href="https://example.com/naris" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Imun Seolnongtang</h4>
+        <div class="rating">⭐ 4.9/5</div><div class="details">📍 Seoul - Jongno</div><div class="price">$</div><p>Seoul's oldest restaurant (since 1904). Ox bone soup simmered 17 hours. Simple, pure, unforgettable.</p><div class="details">🍽️ Korean Soup</div><div style="margin-top: 1rem;"><a href="https://example.com/imun" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Woo Lae Oak</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul</div><div class="price">$</div><p>Legendary since 1946. Pyongyang-style naengmyeon + charcoal bulgogi. Sip broth first!</p><div class="details">🍽️ Pyongyang Naengmyeon</div><div style="margin-top: 1rem;"><a href="https://example.com/woo" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Myeongdong Kyoja</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul - Myeongdong</div><div class="price">$</div><p>Famous knife-cut noodles & mandu. Right in your neighborhood!</p><div class="details">🍽️ Kalguksu (Noodles)</div><div style="margin-top: 1rem;"><a href="https://example.com/kyoja" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Tosokchon</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul</div><div class="price">$</div><p>Samgyetang (ginseng chicken soup) near Gyeongbokgung. Go early to avoid lines.</p><div class="details">🍽️ Korean Soup</div><div style="margin-top: 1rem;"><a href="https://example.com/tosokchon" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Seungune</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 Seoul - near Gwangjang</div><div class="price">$</div><p>Cash-only baekban set meal under ₩10,000. Best breakfast in Seoul! Floor seating, shoes off.</p><div class="details">🍽️ Baekban (Set Meal)</div><div style="margin-top: 1rem;"><a href="https://example.com/seungune" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Eongteori Tongdak</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul</div><div class="price">$</div><p>Old-school Korean fried chicken. Skin cracks like a chip. Perfect with beer & soju.</p><div class="details">🍽️ Fried Chicken</div><div style="margin-top: 1rem;"><a href="https://example.com/eongteori" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>John & Mark</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 Seoul - Dongmyo</div><div class="price">$</div><p>Mozzarella potato chip jeon + house makgeolli in aluminum kettles. Unique!</p><div class="details">🍽️ Korean Drinking Food</div><div style="margin-top: 1rem;"><a href="https://example.com/john-mark" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Yeonseo Market</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul - Yongsan</div><div class="price">$</div><p>Indoor pojangmacha, aunties grill live seafood to order. Authentic Seoul experience.</p><div class="details">🍽️ Seafood</div><div style="margin-top: 1rem;"><a href="https://example.com/yeonseo" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Seoul Gypsy Fermentaria</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul - Seochon</div><div class="price">$</div><p>Fermented mushroom cream pizza + Mission Helles. Sit at bar for 6 different pours.</p><div class="details">🍽️ Pizza + Craft Beer</div><div style="margin-top: 1rem;"><a href="https://example.com/gypsy" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Haap</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 Seoul - Wonseo</div><div class="price">$</div><p>Traditional Korean desserts & tea set (₩15,000). Baesuk (simmered pear drink) is a must!</p><div class="details">🍽️ Korean Dessert & Tea</div><div style="margin-top: 1rem;"><a href="https://example.com/haap" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Café Onion</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 Seoul - Anguk/Seongsu</div><div class="price">$</div><p>Gorgeous converted warehouse cafes. Beautiful ambiance.</p><div class="details">🍽️ Café</div><div style="margin-top: 1rem;"><a href="https://example.com/cafe-onion" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            <div class="card">
+                <h4>Bar Cham</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 Seoul</div><div class="price">$</div><p>Province-inspired Korean cocktails. Bartenders explain everything in English.</p><div class="details">🍽️ Cocktails</div><div style="margin-top: 1rem;"><a href="https://example.com/bar-cham" target="_blank" style="color: var(--primary); text-decoration: none;">View →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section id="budget">
+            <h2>💰 Budget Breakdown</h2>
+            <div class="budget-container">
+                <div>
+                    <ul class="budget-list">
+                        
+                    <li class="budget-item">
+                        <strong>Round-trip flights (2 people)</strong>
+                        <span class="amount">$1700</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>Hotels (6 nights - Myeongdong 4 + Itaewon 2)</strong>
+                        <span class="amount">$600</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>Museum entries, attractions, day trip</strong>
+                        <span class="amount">$300</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>Food (mix of street food, market, nice dinners)</strong>
+                        <span class="amount">$800</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>Airport transfers, local metro, cable car, tours</strong>
+                        <span class="amount">$400</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>Shopping, hanbok rental, tips, contingency</strong>
+                        <span class="amount">$300</span>
+                    </li>
+                
+                    </ul>
+                    <div class="budget-total">
+                        Total: $4100
+                    </div>
+                </div>
+                <div>
+                    <h3>Budget Distribution</h3>
+                    <div class="budget-chart">
+                        
+            <div class="budget-bar" style="width: 41.5%; background: #3b82f6;">
+                41.5%
+            </div>
+        
+            <div class="budget-bar" style="width: 14.6%; background: #1e40af;">
+                14.6%
+            </div>
+        
+            <div class="budget-bar" style="width: 7.3%; background: #0ea5e9;">
+                7.3%
+            </div>
+        
+            <div class="budget-bar" style="width: 19.5%; background: #06b6d4;">
+                19.5%
+            </div>
+        
+            <div class="budget-bar" style="width: 9.8%; background: #10b981;">
+                9.8%
+            </div>
+        
+            <div class="budget-bar" style="width: 7.3%; background: #f59e0b;">
+                7.3%
+            </div>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map">
+            <h2>🗺️ Trip Map</h2>
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Seoul%2C%20South%20Korea&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips">
+            <h2>💡 Local Tips</h2>
+            <div class="tips-grid">
+                
+            <div class="tip">
+                <h4>🚆 Transportation</h4>
+                <p>Get a T-money card (rechargeable transit card) at convenience stores. Use subway for everything - cheap and efficient. Airport bus to Myeongdong: ~₩10,000.</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🗣️ Language</h4>
+                <p>English widely spoken in tourist areas. Learn basic: Annyeonghaseyo (hello), Gamsahamnida (thank you), Eodi isseoyo (where is it), Sillyehamnida (excuse me).</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🌞 Best Time</h4>
+                <p>October is PERFECT - fall foliage, mild weather (60-70°F), fewer crowds than summer, great food season with ginseng chicken soup.</p>
+            </div>
+        
+            <div class="tip">
+                <h4>👥 Crowds</h4>
+                <p>Popular spots busy 11 AM - 4 PM. Go early morning (9 AM) or evening. Avoid lunch hours at famous restaurants.</p>
+            </div>
+        
+            <div class="tip">
+                <h4>💵 Currency</h4>
+                <p>Korean Won (₩). ATMs everywhere. Most places accept cards, but small old places want cash. 1 USD ≈ 1,200 KRW.</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🛡️ Safety</h4>
+                <p>Seoul is very safe. Petty theft rare but watch bags in crowded markets. Public transit is the safest, fastest way to explore.</p>
+            </div>
+        
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>✈️ Trip planned with <strong>AI Travel Planner</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">Generated on 2/4/2026</p>
+    </footer>
+
+    <script>
+        // Sticky nav highlighting
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Scroll to section on nav click
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
