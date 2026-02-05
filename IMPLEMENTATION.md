@@ -135,30 +135,30 @@ The main agent recognizes this and:
 
 **Directory Structure:**
 ```
-clawd/
-  travel-plans/
-    italy-may-2026/
-      index.html          (generated HTML)
-      trip-data.json      (research JSON)
-      README.md           (quick summary)
-    tokyo-june-2026/
-      index.html
-      trip-data.json
-      README.md
+travel-plans/                    (separate repo: billyautomationbot/travel-plans)
+  korea-october-2026/
+    index.html          (generated HTML)
+    trip-data.json      (research JSON)
+  italy-may-2026/
+    index.html
+    trip-data.json
+  .templates/
+    travel-plan.html    (HTML template)
+    generate.js         (JSON → HTML generator)
 ```
 
 **GitHub Push:**
 ```bash
-cd /Users/billys/clawd
-git add travel-plans/italy-may-2026/
+cd /Users/billys/clawd/travel-plans
+git add italy-may-2026/
 git commit -m "Travel plan: Italy May 25 - June 2"
 git push origin main
 ```
 
 **GitHub Pages URL:**
-- `https://github.com/user/clawd/tree/main/travel-plans/italy-may-2026/`
-- Or via GitHub Pages if enabled
-- Direct link: `https://raw.githubusercontent.com/user/clawd/main/travel-plans/italy-may-2026/index.html`
+- Repo: `https://github.com/billyautomationbot/travel-plans`
+- Pages: `https://billyautomationbot.github.io/travel-plans/italy-may-2026/`
+- Each trip folder gets its own URL automatically
 
 ### Phase 5: Deliver to User
 
