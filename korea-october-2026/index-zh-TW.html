@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首爾，韓國之旅 - 2026年10月2日（星期五）至2026年10月9日（星期五）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .meta {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        section h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        /* Itinerary Timeline */
+        .itinerary-day {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .day-date {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .activity {
+            display: flex;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            gap: 1rem;
+        }
+
+        .activity-time {
+            font-weight: bold;
+            color: var(--primary);
+            min-width: 80px;
+            font-size: 0.9rem;
+        }
+
+        .activity-content h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .activity-type {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .activity-type.travel {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+
+        .activity-type.attraction {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+
+        .activity-type.meal {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        .activity-type.restaurant {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th {
+            background: var(--light);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: var(--light);
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .rating {
+            color: var(--warning);
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .card .price {
+            color: var(--success);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .card .details {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin: 0.5rem 0;
+        }
+
+        /* Budget */
+        .budget-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .budget-list {
+            list-style: none;
+        }
+
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .budget-item strong {
+            color: var(--dark);
+        }
+
+        .budget-item .amount {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .budget-total {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .budget-chart {
+            display: flex;
+            height: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .budget-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Map */
+        .map-container {
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+            border: 1px solid var(--border);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Tips */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip {
+            padding: 1.5rem;
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+        }
+
+        .tip h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip p {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Print */
+        @media print {
+            nav, footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .budget-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: slideUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#itinerary" class="nav-link active">行程</a>
+            <a href="#flights" class="nav-link">航班</a>
+            <a href="#hotels" class="nav-link">飯店</a>
+            <a href="#attractions" class="nav-link">景點</a>
+            <a href="#restaurants" class="nav-link">餐廳</a>
+            <a href="#budget" class="nav-link">預算</a>
+            <a href="#tips" class="nav-link">提示</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🌍 首爾，韓國</h1>
+        <div class="meta">2026年10月2日（星期五）— 2026年10月9日（星期五）</div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">8</div>
+                <div class="stat-label">天數</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$4500</div>
+                <div class="stat-label">預算</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2</div>
+                <div class="stat-label">旅行人數</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Itinerary Section -->
+        <section id="itinerary">
+            <h2>📅 每日行程</h2>
+            <div class="itinerary-timeline">
+                
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第1天：出發日 - 前往首爾</div>
+                <span class="day-date">2026年10月2日（星期五）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">上午11:00</div>
+                    <div class="activity-content">
+                        <h4>從舊金山機場乘坐大韓航空出發</h4>
+                        <p>直航11.5小時</p>
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第2天：抵達首爾 - 明洞探索</div>
+                <span class="day-date">2026年10月3日（星期六）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午2:30</div>
+                    <div class="activity-content">
+                        <h4>抵達仁川機場，前往飯店</h4>
+                        <p>辦理入住並休息</p>
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午5:00</div>
+                    <div class="activity-content">
+                        <h4>明洞購物 + 橄欖Young</h4>
+                        <p>韓妝天堂</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上8:00</div>
+                    <div class="activity-content">
+                        <h4>明洞街邊小食晚餐</h4>
+                        <p>玉米熱狗、辣炒年糕、蛋包麵包、龍捲馬鈴薯</p>
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第3天：宮殿與傳統村落</div>
+                <span class="day-date">2026年10月4日（星期日）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上8:00</div>
+                    <div class="activity-content">
+                        <h4>尹嬭家早餐</h4>
+                        <p>首爾最好吃的早餐</p>
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上9:30</div>
+                    <div class="activity-content">
+                        <h4>景福宮（租借傳統韓服！）</h4>
+                        <p>穿著傳統服飾免費入場 - 拍照效果超棒</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午1:00</div>
+                    <div class="activity-content">
+                        <h4>附近午餐</h4>
+                        
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午2:30</div>
+                    <div class="activity-content">
+                        <h4>北村韓屋村</h4>
+                        <p>早點去，保持安靜</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午5:00</div>
+                    <div class="activity-content">
+                        <h4>仁寺洞咖啡館與購物</h4>
+                        
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上7:00</div>
+                    <div class="activity-content">
+                        <h4>廣藏市場晚餐</h4>
+                        <p>綠豆煎餅、迷幻紫菜飯卷、牛肉生牛肉</p>
+                        <span class="activity-type restaurant">餐廳</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第4天：聯合國教科文組織遺產地與河邊美景</div>
+                <span class="day-date">2026年10月5日（星期一）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上9:00</div>
+                    <div class="activity-content">
+                        <h4>飯店早餐</h4>
+                        
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上9:30</div>
+                    <div class="activity-content">
+                        <h4>昌德宮 + 秘密花園</h4>
+                        <p>聯合國教科文組織遺址 - 線上預訂花園導覽</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午1:00</div>
+                    <div class="activity-content">
+                        <h4>午餐</h4>
+                        
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午3:00</div>
+                    <div class="activity-content">
+                        <h4>清溪川溪谷漫步</h4>
+                        <p>穿過市中心的美麗發光溪流</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午6:00</div>
+                    <div class="activity-content">
+                        <h4>南山塔日落時分</h4>
+                        <p>纜車上山、愛情鎖、城市全景</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上8:00</div>
+                    <div class="activity-content">
+                        <h4>伊門砂鍋湯晚餐</h4>
+                        <p>自1904年開業，牛骨湯</p>
+                        <span class="activity-type restaurant">餐廳</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第5天：秋葉季節日 🍂 - 南怡島</div>
+                <span class="day-date">2026年10月6日（星期二）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上7:00</div>
+                    <div class="activity-content">
+                        <h4>早餐與飯店出發</h4>
+                        <p>搭乘旅遊團接駁或乘坐ITX列車</p>
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">上午11:00</div>
+                    <div class="activity-content">
+                        <h4>南怡島探索</h4>
+                        <p>秋葉最盛季節！美麗的漫步路線</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午2:00</div>
+                    <div class="activity-content">
+                        <h4>晨靜樹木園</h4>
+                        <p>令人驚嘆的花園 + 咖啡館</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上7:00</div>
+                    <div class="activity-content">
+                        <h4>返回首爾或在附近過夜</h4>
+                        
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第6天：轉移至梨泰院 - 博物館與文化</div>
+                <span class="day-date">2026年10月7日（星期三）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">上午10:00</div>
+                    <div class="activity-content">
+                        <h4>退房明洞飯店</h4>
+                        
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">上午11:00</div>
+                    <div class="activity-content">
+                        <h4>李玥美術館</h4>
+                        <p>三星藝術收藏</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午1:00</div>
+                    <div class="activity-content">
+                        <h4>入住梨泰院飯店</h4>
+                        
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午3:00</div>
+                    <div class="activity-content">
+                        <h4>經理段街咖啡館漫步</h4>
+                        <p>時尚街道</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上7:00</div>
+                    <div class="activity-content">
+                        <h4>夢坦燒烤晚餐</h4>
+                        <p>下午5點前抵達候補名單</p>
+                        <span class="activity-type restaurant">餐廳</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第7天：最後一天 - 博物館、河邊與夜生活</div>
+                <span class="day-date">2026年10月8日（星期四）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上9:00</div>
+                    <div class="activity-content">
+                        <h4>韓國國立博物館</h4>
+                        <p>免費入場，規模龐大</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">中午12:00</div>
+                    <div class="activity-content">
+                        <h4>午餐</h4>
+                        
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午1:30</div>
+                    <div class="activity-content">
+                        <h4>古董巷購物</h4>
+                        <p>復古精品</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午3:00</div>
+                    <div class="activity-content">
+                        <h4>Haap甜點與茶點</h4>
+                        <p>傳統韓式甜點</p>
+                        <span class="activity-type restaurant">餐廳</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午6:00</div>
+                    <div class="activity-content">
+                        <h4>漢江夜間漫步</h4>
+                        <p>享受炸雞與啤酒（Chimaek）</p>
+                        <span class="activity-type attraction">景點</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">晚上8:00</div>
+                    <div class="activity-content">
+                        <h4>Bar Cham雞尾酒吧</h4>
+                        <p>以地方特色為靈感的韓式雞尾酒</p>
+                        <span class="activity-type restaurant">餐廳</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <div class="itinerary-day">
+            <div class="day-header">
+                <div class="day-title">第8天：出發</div>
+                <span class="day-date">2026年10月9日（星期五）</span>
+            </div>
+            
+                <div class="activity">
+                    <div class="activity-time">早上9:00</div>
+                    <div class="activity-content">
+                        <h4>早餐與退房</h4>
+                        
+                        <span class="activity-type meal">用餐</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">上午11:00</div>
+                    <div class="activity-content">
+                        <h4>前往仁川機場</h4>
+                        
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+                <div class="activity">
+                    <div class="activity-time">下午1:00</div>
+                    <div class="activity-content">
+                        <h4>乘坐大韓航空離開首爾</h4>
+                        <p>同日上午8:00到達舊金山</p>
+                        <span class="activity-type travel">交通</span>
+                    </div>
+                </div>
+            
+        </div>
+    
+            </div>
+        </section>
+
+        <!-- Flights Section -->
+        <section id="flights">
+            <h2>✈️ 航班</h2>
+            <h3>往程航班</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>航空公司</th>
+                        <th>出發地</th>
+                        <th>抵達地</th>
+                        <th>飛行時間</th>
+                        <th>價格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><strong>大韓航空/亞洲航空</strong></td>
+            <td>舊金山 → 仁川</td>
+            <td>上午11:00 → 下午2:30（+1天）</td>
+            <td>11小時30分</td>
+            <td style="color: var(--success); font-weight: bold;">$850</td>
+        </tr>
+    
+                </tbody>
+            </table>
+            <h3>返程航班</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>航空公司</th>
+                        <th>出發地</th>
+                        <th>抵達地</th>
+                        <th>飛行時間</th>
+                        <th>價格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><strong>大韓航空/亞洲航空</strong></td>
+            <td>仁川 → 舊金山</td>
+            <td>下午1:00 → 上午8:00</td>
+            <td>12小時</td>
+            <td style="color: var(--success); font-weight: bold;">$850</td>
+        </tr>
+    
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Hotels Section -->
+        <section id="hotels">
+            <h2>🏨 住宿</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>明洞精品飯店</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 首爾 - 明洞</div><div class="price">$95/晚</div><div class="details">✓ 無線網路、空調、韓式早餐、24小時前台</div><div style="margin-top: 1rem;"><a href="https://booking.example.com" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>梨泰院河畔飯店</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾 - 梨泰院</div><div class="price">$110/晚</div><div class="details">✓ 無線網路、漢江景色、餐廳、spa</div><div style="margin-top: 1rem;"><a href="https://booking.example.com" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Attractions Section -->
+        <section id="attractions">
+            <h2>🎯 必看景點</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>景福宮</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 首爾</div><p>皇家宮殿，環境優美。租借傳統服飾（韓服）可免費入場並拍照效果絕佳！</p><div class="details">地標</div><div class="details">⏰ 上午9點 - 下午6點</div><div style="margin-top: 1rem;"><a href="https://example.com/gyeongbokgung" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>北村韓屋村</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾</div><p>保存完好的傳統韓屋社區。早點來避開人群。保持安靜 - 這裡有人居住！</p><div class="details">社區</div><div class="details">⏰ 全天開放</div><div style="margin-top: 1rem;"><a href="https://example.com/bukchon" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>昌德宮 + 秘密花園</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 首爾</div><p>聯合國教科文組織遺址，擁有美麗的秘密花園。請提前在線預訂秘密花園導覽。</p><div class="details">地標</div><div class="details">⏰ 上午9點 - 下午6點（星期一休閉）</div><div style="margin-top: 1rem;"><a href="https://example.com/changdeokgung" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>南山塔（N首爾塔）</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾</div><p>乘坐纜車欣賞日落景色、愛情鎖和360度城市景觀。</p><div class="details">地標</div><div class="details">⏰ 上午10點 - 晚上11點</div><div style="margin-top: 1rem;"><a href="https://example.com/namsan" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>廣藏市場</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾</div><p>首爾最古老、最好的美食市場之一。必吃：綠豆煎餅、迷幻紫菜飯卷、牛肉生肉。</p><div class="details">市場</div><div class="details">⏰ 上午9點 - 下午6點</div><div style="margin-top: 1rem;"><a href="https://example.com/gwangjang" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>南怡島 + 晨靜樹木園</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 加平（一日遊）</div><p>秋葉季節的經典組合。10月初秋葉最盛！乘坐ITX列車或預訂旅遊團接駁。</p><div class="details">自然</div><div class="details">⏰ 上午9點 - 晚上9點</div><div style="margin-top: 1rem;"><a href="https://example.com/nami" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>李玥美術館</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾</div><p>三星的世界級藝術收藏。令人驚嘆的現代建築。</p><div class="details">美術館</div><div class="details">⏰ 上午10點 - 下午6點（星期一休閉）</div><div style="margin-top: 1rem;"><a href="https://example.com/leeum" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>韓國國立博物館</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾</div><p>位於龍山的大型博物館，免費入場。預留2-3小時。</p><div class="details">博物館</div><div class="details">⏰ 上午9點 - 下午6點（星期一休閉）</div><div style="margin-top: 1rem;"><a href="https://example.com/national-museum" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section id="restaurants">
+            <h2>🍽️ 餐飲推薦</h2>
+            <div class="card-grid">
+                
+            <div class="card">
+                <h4>夢坦</h4>
+        <div class="rating">⭐ 4.9/5</div><div class="details">📍 首爾 - 龍山</div><div class="price">$</div><p>稻草燻烤短肋、傳奇炒飯。不接受預訂 - 上午11點現場排隊。</p><div class="details">🍽️ 韓式燒烤</div><div style="margin-top: 1rem;"><a href="https://example.com/mongtan" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>娜麗家</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 首爾 - 龍山</div><div class="price">$</div><p>老派寶鍋、超薄豬五花配絕妙蔥段沙拉。僅收現金。</p><div class="details">🍽️ 韓式燒烤</div><div style="margin-top: 1rem;"><a href="https://example.com/naris" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>伊門砂鍋湯</h4>
+        <div class="rating">⭐ 4.9/5</div><div class="details">📍 首爾 - 鍾路</div><div class="price">$</div><p>首爾最古老餐廳（自1904年）。牛骨湯燉製17小時。簡樸、純粹、難忘。</p><div class="details">🍽️ 韓式湯</div><div style="margin-top: 1rem;"><a href="https://example.com/imun" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>禾來伍舍</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾</div><div class="price">$</div><p>自1946年營運。平壤冷麵 + 炭烤牛肉。先喝湯！</p><div class="details">🍽️ 平壤冷麵</div><div style="margin-top: 1rem;"><a href="https://example.com/woo" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>明洞餃子</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾 - 明洞</div><div class="price">$</div><p>著名刀切麵與餃子。就在你住的附近！</p><div class="details">🍽️ 刀切麵（Kalguksu）</div><div style="margin-top: 1rem;"><a href="https://example.com/kyoja" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>土俗村</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾</div><div class="price">$</div><p>人蔘雞湯（Samgyetang）位於景福宮附近。早點去避開人流。</p><div class="details">🍽️ 韓式湯</div><div style="margin-top: 1rem;"><a href="https://example.com/tosokchon" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>尹嬭家</h4>
+        <div class="rating">⭐ 4.8/5</div><div class="details">📍 首爾 - 廣藏附近</div><div class="price">$</div><p>現金收付白飯套餐低於₩10,000。首爾最好吃的早餐！地板座位、脫鞋。</p><div class="details">🍽️ 白飯套餐（Baekban）</div><div style="margin-top: 1rem;"><a href="https://example.com/seungune" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>翁托里炸雞</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾</div><div class="price">$</div><p>老派韓式炸雞。炸得像晶片一樣酥脆。完美搭配啤酒與燒酒。</p><div class="details">🍽️ 炸雞</div><div style="margin-top: 1rem;"><a href="https://example.com/eongteori" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>約翰與馬克</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 首爾 - 東廟</div><div class="price">$</div><p>起司馬鈴薯脆餅 + 自釀馬格利在鋁桶中。獨特！</p><div class="details">🍽️ 韓式下酒菜</div><div style="margin-top: 1rem;"><a href="https://example.com/john-mark" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>淵西市場</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾 - 龍山</div><div class="price">$</div><p>室內棚屋美食，阿姨現場燒烤海鮮訂單。道地首爾體驗。</p><div class="details">🍽️ 海鮮</div><div style="margin-top: 1rem;"><a href="https://example.com/yeonseo" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>首爾吉普賽發酵館</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾 - 西村</div><div class="price">$</div><p>發酵蘑菇乳酪披薩 + 任務地獄啤酒。坐在吧台享受6種不同啤酒。</p><div class="details">🍽️ 披薩 + 精釀啤酒</div><div style="margin-top: 1rem;"><a href="https://example.com/gypsy" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>Haap</h4>
+        <div class="rating">⭐ 4.7/5</div><div class="details">📍 首爾 - 元西</div><div class="price">$</div><p>傳統韓式甜點與茶套（₩15,000）。柏子茶（Baesuk）必點！</p><div class="details">🍽️ 韓式甜點與茶</div><div style="margin-top: 1rem;"><a href="https://example.com/haap" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>洋蔥咖啡館</h4>
+        <div class="rating">⭐ 4.5/5</div><div class="details">📍 首爾 - 昂谷/成熟</div><div class="price">$</div><p>華麗的改造倉庫咖啡館。氛圍優美。</p><div class="details">🍽️ 咖啡館</div><div style="margin-top: 1rem;"><a href="https://example.com/cafe-onion" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            <div class="card">
+                <h4>Bar Cham</h4>
+        <div class="rating">⭐ 4.6/5</div><div class="details">📍 首爾</div><div class="price">$</div><p>地方風味韓式雞尾酒。酒保用英文解釋所有飲品。</p><div class="details">🍽️ 雞尾酒</div><div style="margin-top: 1rem;"><a href="https://example.com/bar-cham" target="_blank" style="color: var(--primary); text-decoration: none;">查看 →</a></div></div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section id="budget">
+            <h2>💰 預算明細</h2>
+            <div class="budget-container">
+                <div>
+                    <ul class="budget-list">
+                        
+                    <li class="budget-item">
+                        <strong>往返航班（2人）</strong>
+                        <span class="amount">$1700</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>飯店（6晚 - 明洞4晚 + 梨泰院2晚）</strong>
+                        <span class="amount">$600</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>博物館門票、景點、一日遊</strong>
+                        <span class="amount">$300</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>食物（街邊小食、市場、高檔晚餐混合）</strong>
+                        <span class="amount">$800</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>機場接駁、地鐵、纜車、導覽團</strong>
+                        <span class="amount">$400</span>
+                    </li>
+                
+                    <li class="budget-item">
+                        <strong>購物、韓服租賃、小費、應急費用</strong>
+                        <span class="amount">$300</span>
+                    </li>
+                
+                    </ul>
+                    <div class="budget-total">
+                        總計：$4100
+                    </div>
+                </div>
+                <div>
+                    <h3>預算分配</h3>
+                    <div class="budget-chart">
+                        
+            <div class="budget-bar" style="width: 41.5%; background: #3b82f6;">
+                41.5%
+            </div>
+        
+            <div class="budget-bar" style="width: 14.6%; background: #1e40af;">
+                14.6%
+            </div>
+        
+            <div class="budget-bar" style="width: 7.3%; background: #0ea5e9;">
+                7.3%
+            </div>
+        
+            <div class="budget-bar" style="width: 19.5%; background: #06b6d4;">
+                19.5%
+            </div>
+        
+            <div class="budget-bar" style="width: 9.8%; background: #10b981;">
+                9.8%
+            </div>
+        
+            <div class="budget-bar" style="width: 7.3%; background: #f59e0b;">
+                7.3%
+            </div>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map">
+            <h2>🗺️ 旅遊地圖</h2>
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Seoul%2C%20South%20Korea&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips">
+            <h2>💡 當地提示</h2>
+            <div class="tips-grid">
+                
+            <div class="tip">
+                <h4>🚆 交通</h4>
+                <p>在便利商店購買T-money卡（可充值的交通卡）。地鐵適合所有出行 - 便宜又有效率。機場巴士到明洞：約₩10,000。</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🗣️ 語言</h4>
+                <p>觀光區英文使用廣泛。學習基本詞彙：Annyeonghaseyo（你好）、Gamsahamnida（謝謝）、Eodi isseoyo（在哪裡）、Sillyehamnida（對不起）。</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🌞 最佳季節</h4>
+                <p>10月完美 - 秋葉、溫和天氣（華氏60-70度）、比夏季少人群、絕佳美食季節搭配人蔘雞湯。</p>
+            </div>
+        
+            <div class="tip">
+                <h4>👥 人群</h4>
+                <p>熱門景點上午11點至下午4點擁擠。早上9點或傍晚去。避免在著名餐廳的午餐時段去。</p>
+            </div>
+        
+            <div class="tip">
+                <h4>💵 貨幣</h4>
+                <p>韓元（₩）。隨處可見ATM。多數地方接受信用卡，但老派小店要求現金。1美元≈1,200韓元。</p>
+            </div>
+        
+            <div class="tip">
+                <h4>🛡️ 安全</h4>
+                <p>首爾非常安全。扒竊罕見但在擁擠市場要看好包包。公共交通是探索的最安全、最快方式。</p>
+            </div>
+        
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>✈️ 行程由<strong>AI旅遊規劃師</strong>規劃</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">生成於2026年2月4日</p>
+    </footer>
+
+    <script>
+        // Sticky nav highlighting
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Scroll to section on nav click
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
